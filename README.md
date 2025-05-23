@@ -1,4 +1,4 @@
-# Alondra-E
+# Alondra E.
 
 A Pen created on CodePen.
 
