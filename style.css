@@ -47,3 +47,482 @@
   grid-area: seven;
   border: 3px solid red;
 }
+/*========================= Style for Memory Game =========================*/
+url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+
+margin:0; 
+
+padding:0;
+
+box-sizing:border-box;
+
+}   
+
+body{
+
+background:#BFCBC2; 
+
+font-family: Merriweather, serif;
+
+}
+
+.container{
+
+padding:30px;   
+
+width:420px;
+
+background: yellow;
+
+background: #f0e2bd;
+
+position:absolute;
+
+top:50%;
+
+left:50%;
+
+transform:translate(-50%,-50%);
+
+border-radius:5px;
+
+padding-bottom:30px;
+
+
+}
+
+.container h2{
+
+text-align:center;
+
+font-size:17px;
+
+letter-spacing:2px;
+
+color:#000;
+
+margin-top:3px;
+
+text-transform:uppercase;
+
+}
+
+.container .reset-btn{
+
+all:unset; 
+
+height:40px;
+
+width:160px;
+
+background:#000;
+
+color:#FFF;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+border-radius:3px;
+
+margin:auto;
+
+margin-top:18px;
+
+text-transform:uppercase;
+
+letter-spacing:1px;
+
+font-size:12px;
+
+cursor:pointer;
+
+}
+
+.container .game{
+
+width:100%;  
+
+height:350px;
+
+margin-top:25px;
+
+display:flex;
+
+flex-wrap:wrap;
+
+gap:7px;
+
+transform-style:preserve-3d;
+
+perspective:500px;
+
+}
+
+.item{
+
+position:relative; 
+
+height:74px;
+
+width:74px;
+
+background:white;
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+font-size:25px;
+
+transition:all .25s;
+
+transform:rotateY(180deg);
+
+border:2px solid #000;
+
+border-radius:3px;
+
+}
+
+.item.boxOpen{
+
+transform:rotateY(0deg);
+
+}
+
+.item::after{
+
+content:"";  
+
+position:absolute;
+
+inset:0;
+
+background: pink;
+
+transition:all .25s;
+
+transform:rotateY(0deg);
+
+backface-visibility:hidden;
+
+}
+
+.boxOpen::after,.boxMatch::after{
+
+transform:rotateY(180deg);        
+
+}
+
+::selection {
+
+background:rgb(100, 149, 237, 0.8);
+
+color: yellow;
+
+}
+/*========================= Style for To Do List =========================*/
+*{
+  margin: 0;
+  padding: 0; //
+  font-family: 'Poppins', sans-serif;
+  box-sizing: border-box;
+}
+.container{
+  width: 100%;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #DECCCC, #81A684);
+  padding: 10px;
+}
+.todo-app{
+  width: 100%;
+  max-width: 540px;
+  background: linear-gradient(135deg, #EFE6E6, #9EBDA0);
+  margin: 100px auto 20px;
+  padding: 40px 30px 70px;
+  border-radius: 10px;
+}
+.todo-app h2{
+  color: #002765;
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.todo-app h2 img{
+  width: 30px;
+  margin-left: 10px;
+}
+.row{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #edeef0;
+  border-radius: 30px;
+  padding-left: 20px;
+  margin-bottom: 25px; 
+}
+input{
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  padding: 10px;
+  font-weight: 14px;
+}
+button{
+   border: none;
+  outline: none;
+  padding: 16px 50px;
+ background: url('https://media.istockphoto.com/id/662195090/vector/minimal-cat-logo.jpg?s=612x612&w=0&k=20&c=raZy0TdoPlelaobOr8YgPR9ngjXTlJZTfukZe9VSTTA=') ;
+
+  background-size: contain;
+  color: transparent;
+  background: #293F14;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 40px;
+}
+ul li{
+  list-style: none;
+  font-size: 17px;
+  padding: 12px 8px 12px 50px;
+  user-select: none;
+  cursor: pointer;
+  position: relative;
+}
+ul li::before{
+  content: '';
+  position: absolute;
+  height: 28px;
+  width: 28px;
+  border-radius: 50%;
+  background-image: url(https://icons.veryicon.com/png/o/miscellaneous/basic-icon-5/unchecked-41.png);
+  background-size: cover;
+  background-position: center;
+  top: 12px; 
+  left: 8px;
+  
+}
+ul li.checked{
+  color: #555;
+  text-decoration: line-through;
+}
+ul li.checked::before{
+  background-image: url(https://cdn-icons-png.flaticon.com/512/3388/3388530.png);
+}
+ul li span{
+  position: absolute;
+  right: 0;
+  top: 5px;
+  width: 40px;
+  height: 40px;
+  font-size: 22px
+  color: #555;
+  line-height: 40px;
+  text-align: center;
+  border-radius: 50%;
+}
+ul li span:hover{
+  background: #edeef0;
+}
+
+#clear-btn {
+  background-color: #B6CDB8;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 30px;
+  cursor: pointer;
+  margin-top: 20px;
+  width: 100%;
+  font-size: 16px;
+}
+
+#clear-btn:hover {
+  background-color: #cc0000;
+}
+
+/*========================= Style for Kid's ABC Game =========================*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* the body styling */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f7f7f7;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-color: #2a6f97;
+    height: 100vh; /* this centers the content vertically and horizontally */
+
+   background-image:url("https://img.freepik.com/free-vector/kids-doodles_1108-181.jpg"); 
+}
+
+/* quiz container styling */
+#game-container {
+    background-color: #e2ece9;
+    padding: 30px 40px; 
+    border-radius: 15px; /* for rounded corners */
+  border:solid white 7px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* shadow */
+    width: 350px; 
+    text-align: center;
+ 
+  
+}
+
+/* header styling */
+h2 {
+    font-size: 22px;
+    color: #2a6f97;
+    margin-bottom: 20px;
+}
+
+/* the letter display styling */
+#letter {
+    font-size: 20px; 
+    font-weight: bold;
+    color: #2a6f97;
+    margin-bottom: 10px;
+}
+
+/*input styling */
+input {
+    width: 85%;
+    padding: 15px;
+    margin-bottom: 15px;
+    border: 2px solid #ccc; 
+    border-radius: 8px; 
+    font-size: 16px;
+}
+
+/* button Styling */
+button {
+    padding: 15px 25px;
+    background-color: #f2cc8f;
+    color: #2a6f97;
+    border: none;
+    border-radius: 8px; 
+    font-size: 16px;
+    cursor: grab;
+    transition: background-color 0.3s ease;
+    margin-bottom: 15px;
+}
+
+/* hint button */
+.hidden {
+    display: none;
+}
+/*this changes the color when cursor hovers over the button*/
+button:hover {
+      background-color:#ffc9b9;
+      transition: 0.7s;
+  }
+/*========================= Rhyming Game =========================*/
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #B09E99;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  color: #5B4C48;
+}
+
+#game-container {
+  background-color: #FEE9E1;
+  padding: 30px 40px;
+  border-radius: 15px;
+  border: solid white 7px;
+  width: 350px;
+  text-align: center;
+  box-shadow: 0 10px 5px;
+}
+
+h1 {
+  margin-top: 0;
+  font-size: 28px;
+  color: #5B4C48;
+}
+
+#prompt-text {
+  font-size: 18px;
+  font-weight: bold;
+  color: #5B4C48;
+  margin-bottom: 5px;
+}
+
+
+#main-word {
+  font-size: 26px;
+  color: #F5CAC3;
+  margin-bottom: 20px;
+}
+
+#options {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+#options button {
+  padding: 10px 18px;
+  background-color: #DCD3D1;
+  color: #5B4C48;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+ 
+}
+
+#options button:hover {
+  background-color: #F5CAC3;
+}
+
+#feedback {
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+
+#next-button {
+  padding: 12px 24px;
+  background-color: #DCD3D1;
+  color: #5B4C48;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  
+}
+
+
+#next-button:hover {
+  background-color: #F5CAC3;
+}
+
+
+
+
+
